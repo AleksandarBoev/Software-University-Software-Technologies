@@ -1,0 +1,18 @@
+#redColor{
+    color:red;
+}
+
+.greenColor{
+    color:green;
+}
+
+#blueColor{
+    color:blue;
+}
+
+.paragraphStyle{
+    background: #d3d3d3;
+    text-align: center;
+    outline-color: red;
+    outline-style: solid;
+}
