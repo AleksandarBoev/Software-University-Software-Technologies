@@ -1,0 +1,4 @@
+You need to have "composer" installed. When you open the project
+(preferably via PhpStorm) you need to type "composer install" in the terminal.
+This action will download some needed files. "composer install" will NOT work
+if you haven't installed composer before that.
