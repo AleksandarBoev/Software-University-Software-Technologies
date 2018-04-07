@@ -18,6 +18,19 @@ public class P09MostFrequentNumber {
             }
         }
 
+        int biggestOccurence = 0;
+        for (Map.Entry<Integer, Integer> currentElement : numberCount.entrySet()) {
+            if (currentElement.getValue() > biggestOccurence) {
+                biggestOccurence = currentElement.getValue();
+            }
+        }
+
+        for (Map.Entry<Integer, Integer> currentElement : numberCount.entrySet()) {
+            if (currentElement.getValue() == biggestOccurence) {
+                System.out.println(currentElement.getKey());
+                break;
+            }
+        }
 
         //main ends here
     }
