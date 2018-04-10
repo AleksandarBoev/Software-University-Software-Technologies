@@ -76,7 +76,7 @@ class Article
     private $authorId;
 
     /**
-     * @param integer @authorId
+     * @param integer $authorId
      *
      * @return Article
      */

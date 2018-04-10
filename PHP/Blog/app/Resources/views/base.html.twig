@@ -33,6 +33,14 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         {% if app.user %}
+                            {#newly added#}
+                            <li>
+                                <a href="{{ path('article_create') }}">
+                                    Create Article
+                                </a>
+                            </li>
+
+
                             <li>
                                 <a href="{{ path('user_profile') }}">
                                     MY PROFILE
