@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class P23AverageGrades {
@@ -24,20 +21,28 @@ public class P23AverageGrades {
             students[i] = currentStudent;
         }
 
-//        Arrays.stream(students).filter(s -> s.getAverageGrade() >= 5.50).sorted(n -> n.getName())
+        Arrays.stream(students)
+                .filter(avr -> avr.getAverageGrade() >= 5.0)
+                .sorted(
+                        Comparator.comparing(Student::getName)
+                        .thenComparing(Comparator.comparing(Student::getAverageGrade).reversed())
+                ).forEach(s -> {
+            System.out.printf("%s -> %.2f%n", s.getName(), s.getAverageGrade());
+        });
         //main ends here
     }
 }
 
 class Student {
     private String name;
-    public ArrayList<Double> grades; //don't know how to make a proper set method for an array
+
+    private ArrayList<Double> grades; //don't know how to make a proper set method for an array
+
     private double averageGrade;
 
     public String getName() {
         return this.name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -49,6 +54,14 @@ class Student {
         }
 
         return sum / this.grades.size();
+    }
+
+    public ArrayList<Double> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(ArrayList<Double> grades) {
+        this.grades = grades;
     }
 
     public Student(String name, ArrayList<Double> grades) {
